@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Judicial Branch Content Generator">
+  <meta name="author" content="ItsNotSyn=">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#712cf9">
+  <title>Judicial Branch Content Generator</title>
+
+  <script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+  <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <link rel="icon" href="images/favicon.png" type="image">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/templates.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="js/jquery.js">
+  <link rel="stylesheet" media="screen" href="css/font.css" type="text/css"/>
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+  <!--  -->
+
+    <script>
+        function selectCode() {
+            var codeElement = document.getElementById("code");
+            var range = document.createRange();
+            range.selectNode(codeElement);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+        }
+
+        
+        function copyText() {
+            // Select the text to copy
+            var textToCopy = document.getElementById('code');
+            var selection = window.getSelection();
+            var range = document.createRange();
+            range.selectNodeContents(textToCopy);
+            selection.removeAllRanges();
+            selection.addRange(range);
+
+            // Copy the selected text to clipboard
+            document.execCommand('copy');
+
+            // Deselect the text
+            selection.removeAllRanges();
+
+            // Optionally, notify the user that the text has been copied
+            alert('Text has been copied to clipboard!');
+        }
+    </script>
+
+<style>
+    .tab button {
+            background-color: rgb(15, 16, 17);
+            color: rgb(255, 255, 255);
+            outline-color: initial;
+            border-color: rgb(145, 134, 117);
+        }
+    
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+          }
+      
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+      
+          .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+          }
+      
+          .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+          }
+      
+          .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+          }
+      
+          .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+          }
+      
+          .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+          }
+      
+          .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+      
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+          }
+      
+          .bd-mode-toggle {
+            z-index: 1500;
+          }
+      
+          .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+          }
+    </style>
+    <link href="/css/sidebars.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <main class="d-flex flex-nowrap">
+                <div class="wrapper">
+                    <!-- Sidebar  -->
+                    <nav id="sidebar" >
+                        <div class="flex-shrink-0 " style="justify-content: flex-start; max-width: 350px;">
+                          <div class="sidebar">
+                            <div class="sidebar-header">
+                                <a href="https://gov.eclipse-rp.net/viewforum.php?f=1624">
+                                    <img src="images/JBlogo.png"  style="width: 165px; height: 165px;" alt=""  class="fa-align-center">
+                                </a></div>
+                                <li class="border-top my-3 list-unstyled"></li>
+                            <ul class="list-unstyled">
+                            <li class="mb-1">
+                                <button class="btn btn-toggle sidebar-drops d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                                Home
+                                </button>
+                                <div class="show" id="home-collapse">
+                                <ul class="btn-toggle-nav sidebar-options list-unstyled fw-normal pb-1 small">
+                                    <li><a href="index.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Home Page</a></li>
+                                    <li><a href="templates.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">JB Personal Email </a></li> 
+                                    <li><a href="Signature.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Signature Generator</a></li> 
+    
+                                </ul>
+                                </div>
+                                <li class="border-top my-3 list-unstyled"></li>
+                            </li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle sidebar-drops d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#Def-collapse" aria-expanded="false">
+                                Defence Templates
+                                </button>
+                                <div class="collapse" id="Def-collapse">
+                                <ul class="btn-toggle-nav sidebar-options list-unstyled fw-normal pb-1 small">
+                                    <li><a href="templates.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Standard Email</a></li>
+                                    <li><a href="monthtemplate.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly Review Email</a></li>
+                                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Contract Template</a></li>
+                       
+                                </ul>
+                                </div>
+                                <li class="border-top my-3 list-unstyled"></li>
+                            </li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle sidebar-drops d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#Pros-collapse" aria-expanded="false">
+                                Prosecution Templates
+                                </button>
+                                <div class="collapse" id="Pros-collapse">
+                                  <ul class="btn-toggle-nav sidebar-options list-unstyled fw-normal pb-1 small">
+                                      <li><a href="Prosecution/Prosecution Personal.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Prosecution Personal Email</a></li>                                    
+                                      <li><a href="Prosecution/Case Logs.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Case Logs</a></li>
+                                      <li><a href="Prosecution/General Docket Notice.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">General Docket</a></li>
+                                      <li><a href="Prosecution/Notification of Counsel.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Notification of Council</a></li>
+                                      <li><a href="Prosecution/Plea Deal.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Plea Deal</a></li>
+                                      <li><a href="Prosecution/Plea Deal Revised.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Plea Deal [Revised]</a></li>
+                                      <li><a href="Prosecution/Prosecution Arrest Report.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Arrest Report</a></li>
+                                      <li><a href="Prosecution/Search Warrant Request.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Search Warrant Request</a></li>
+                                      <li><a href="Prosecution/Voluntary Dismissal With Prejudice.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Dismiss W/ Prejudice</a></li>
+                                      <li><a href="Prosecution/Voluntary Dismissal Without Prejudice.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Dismiss W/O Prejudice</a></li>
+                                  </ul>
+                                <button class="btn btn-toggle sidebar-drops d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#promo-collapse" aria-expanded="false">
+                                 Motions
+                                  </button>
+                                  <div class="collapse" id="promo-collapse">
+                                    <ul class="btn-toggle-nav sidebar-options list-unstyled fw-normal pb-1 small">
+                                      <li><a href="Prosecution/Motions/- for Continuance.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Continuance</a></li>
+                                      <li><a href="Prosecution/Motions/- of Counsel.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Notif of Council</a></li>
+                                      <li><a href="Prosecution/Motions/- for Discovery.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Discovery</a></li>
+                                      <li><a href="Prosecution/Motions/- for Summary Judgement.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Summary Judgement</a></li>
+                                      <li><a href="Prosecution/Motions/- to Amend.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Amend</a></li>
+                                      <li><a href="Prosecution/Motions/- to Stay Pending Appeal.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Stay Pending Appeal</a></li>
+                                      <li><a href="Prosecution/Motions/- to Suppress.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Suppress</a></li>
+                                  </ul>
+                                </div>
+                                <button class="btn btn-toggle sidebar-drops d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#CIR-collapse" aria-expanded="false">
+                                  Court Information Requests
+                                  </button>
+                                  <div class="collapse" id="CIR-collapse">
+                                  <ul class="btn-toggle-nav sidebar-options list-unstyled fw-normal pb-1 small">
+                                      <li><a href="Prosecution/Court Information Requests/7 Day Notice.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">7 Day Notice</a></li>
+                                      <li><a href="Prosecution/Court Information Requests/Initial Response.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Initial Response</a></li>
+                                      <li><a href="Prosecution/Court Information Requests/LSPD Info Request.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">LSPD Info Request</a></li>
+                                      <li><a href="Prosecution/Court Information Requests/LSSD Info Request.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">LSSD Info Request</a></li>
+                                  </ul>
+                                  </div>
+                                <li class="border-top my-3 list-unstyled"></li>
+                            </li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle sidebar-drops d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#judge-collapse" aria-expanded="false">
+                                Judges Templates
+                                </button>
+                                <div class="collapse" id="judge-collapse">
+                                <ul class="btn-toggle-nav sidebar-options list-unstyled fw-normal pb-1 small">
+                                    <li><a href="templates.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Standard Email</a></li>
+                                    <li><a href="monthtemplate.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly Review Email</a></li>
+                                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Contract Template</a></li>
+                                </ul>
+                                </div>
+                          </li>
+                            <li class="border-top my-3 list-unstyled"></li>
+                            </ul>
+                        </div>
+                    </nav>	    
+	    
+        <!-- Page Content  -->
+        <div id="content" style="overflow:auto">
+            <div class="row" >
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="container-fluid">
+                    <ul class="navUl">
+                            <li><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="fas fa-align-left"></i>
+                            </button></li>
+                            <li><h3>Email Template</h3></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="usr">Standard Email Template</label>
+                        <img src="images/StandardEmail.png" id="usr"></div>
+                    <div class="col-md-4">
+                        <label for="usr"> Code - <a href="#" onclick="selectCode(); return false;">Select all</a> - <a href="#" onclick="copyText(); return false;">Copy to Clipboard</a></label>  
+                        <pre  style="width: 635px; height: 415px;">
+<code id="code">
+    [img]https://i.imgur.com/NqDDffG.png[/img]
+    [img]https://i.imgur.com/Ao0UpOl.png[/img]
+    [divbox=antiquewhite]
+    [b]Prosecutor Name:[/b] Fname Lname
+    [b]Prosecutor Rank:[/b] 
+    [/divbox]
+    [img]https://i.imgur.com/Krte9u5.png[/img]
+    [divbox=antiquewhite]
+    [b]Defendant Name:[/b] X
+    [b]Defendant Phone:[/b] X
+    [/divbox]
+    [img]https://i.imgur.com/G1CxQa4.png[/img]
+    [divbox=antiquewhite]
+    [b]Date & Time:[/b] X
+    [b]Crimes Alleged:[/b]
+    [list=1]
+    [*]X
+    [*]X
+    [*]X
+    [/list]
+    [b]Narrative:[/b]
+    X
+    
+    [hr][/hr]
+    I, [b]Fname Lname[/b], hereby affirm that all information provided above is true and correct to the best of my knowledge. [b][color=#0000FF](([/color][/b] I affirm that all information submitted has been obtained via In-Character means. [b][color=#0000FF]))[/color][/b]
+    [/divbox][img]https://imgur.com/T0UjUjH.png[/img]
+    </code>
+                                </pre></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+        $(document).ready(function(){
+            drawText();
+            $('#sidebar').toggleClass('active');
+        });
+    </script>
+    <script>
+        function drawText() {
+            var canvas = document.getElementById('canvas');
+            ctx = canvas.getContext('2d');
+            var img = document.getElementById('canvasImg');
+            canvas.width = 1920;
+            canvas.crossOrigin = "Anonymous";
+            canvas.height = 64;
+//            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.font = "50px Montserrat";
+            ctx.textAlign = "left";
+            ctx.drawImage(img, 0, 0);
+            ctx.fillStyle = "white";
+            ctx.shadowOffsetX = 2.5;
+            ctx.shadowOffsetY = 2.5;
+            ctx.shadowColor = "rgba(0,0,0,1)";
+            ctx.fillText($('#inp').val().toUpperCase(), 10, 48);
+        }
+
+        $(document).ready(function(){
+            $('#inp').on('input', drawText);
+        });
+        
+    </script>
+
+</main>
+<script src="/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="/js/sidebars.js"></script>
+</body>
+</html>
+
